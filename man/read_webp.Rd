@@ -2,6 +2,7 @@
 % Please edit documentation in R/webp.R
 \name{read_webp}
 \alias{read_webp}
+\alias{webp}
 \alias{write_webp}
 \title{Webp image format}
 \usage{
@@ -40,4 +41,3 @@ img <- read_webp("rlogo.webp")
 writeJPEG(img, "rlogo.jpeg")
 browseURL("rlogo.jpeg")
 }
-

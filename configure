@@ -1,5 +1,5 @@
 #!/bin/bash
-# Anticonf (tm) script by Jeroen Ooms (2015)
+# Anticonf (tm) script by Jeroen Ooms (2017)
 # This script will query 'pkg-config' for the required cflags and ldflags.
 # If pkg-config is unavailable or does not find the library, try setting
 # INCLUDE_DIR and LIB_DIR manually via e.g:
@@ -7,7 +7,7 @@
 
 # Library settings
 PKG_CONFIG_NAME="libwebp"
-PKG_DEB_NAME="libwepb-dev"
+PKG_DEB_NAME="libwebp-dev"
 PKG_RPM_NAME="libwebp-devel"
 PKG_CSW_NAME="libwebp_dev"
 PKG_BREW_NAME="webp"
@@ -34,14 +34,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   if [ $(command -v brew) ]; then
     BREWDIR=$(brew --prefix)
   else
-    echo "Auto-brewing $PKG_BREW_NAME..."
-    BREWDIR="/tmp/homebrew"
-    rm -Rf $BREWDIR
-    mkdir -p $BREWDIR
-    curl -fsSL https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C $BREWDIR
-    HOMEBREW_CACHE="/tmp" $BREWDIR/bin/brew install $PKG_BREW_NAME 2>&1 | sed 's/Warning/Note/g'
-    rm -f $BREWDIR/Cellar/$PKG_BREW_NAME/*/lib/*.dylib
-    rm -f $BREWDIR/opt/$PKG_BREW_NAME/lib/*.dylib
+    curl -sfL "https://jeroen.github.io/autobrew/$PKG_BREW_NAME" > $TMPDIR/autobrew
+    source $TMPDIR/autobrew
   fi
   PKG_CFLAGS="-I$BREWDIR/opt/$PKG_BREW_NAME/include"
   PKG_LIBS="-L$BREWDIR/opt/$PKG_BREW_NAME/lib $PKG_LIBS"
