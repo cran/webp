@@ -43,13 +43,17 @@ read_webp <- function(source, numeric = TRUE) {
 #' @param image array of 3 dimensions (width * height * channel) with real numbers
 #' between 0 and 1.
 #' @param target path to a file or \code{NULL} to return the image as a raw vector
-#' @param quality value between 0 and 100
+#' @param quality value between 0 and 100 for lossy compression, or \code{NA} for
+#' lossless compression.
 write_webp <- function(image, target = NULL, quality = 80) {
   if(is.numeric(image)){
     image <- structure(as.raw(image * 255), dim = dim(image))
     image <- aperm(image)
   }
   channels = dim(image)[1]
+  quality <- as.integer(quality)
+  if(!is.na(quality))
+    stopifnot("quality must be between 0 and 100" = quality > -1 && quality < 101)
   stopifnot(channels == 3 || channels == 4)
   buf <- .Call(R_webp_encode, image, quality)
   if(is.character(target))
