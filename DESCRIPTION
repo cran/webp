@@ -1,9 +1,9 @@
 Package: webp
 Type: Package
 Title: A New Format for Lossless and Lossy Image Compression
-Version: 1.2.0
-Author: Jeroen Ooms
-Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
+Version: 1.2.1
+Authors@R: person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroenooms@gmail.com",
+    comment = c(ORCID = "0000-0002-4035-0289"))
 Description: Lossless webp images are 26% smaller in size compared to PNG. Lossy
     webp images are 25-34% smaller in size compared to JPEG. This package reads
     and writes webp images into a 3 (rgb) or 4 (rgba) channel bitmap array using
@@ -17,6 +17,8 @@ Suggests: jpeg, png
 RoxygenNote: 7.1.1
 Language: en-GB
 NeedsCompilation: yes
-Packaged: 2023-09-26 10:05:45 UTC; jeroen
+Packaged: 2024-10-03 14:13:22 UTC; jeroen
+Author: Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>)
+Maintainer: Jeroen Ooms <jeroenooms@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-09-26 11:20:02 UTC
+Date/Publication: 2024-10-04 09:10:02 UTC
