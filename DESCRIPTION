@@ -1,7 +1,7 @@
 Package: webp
 Type: Package
 Title: A New Format for Lossless and Lossy Image Compression
-Version: 1.2.1
+Version: 1.3.0
 Authors@R: person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroenooms@gmail.com",
     comment = c(ORCID = "0000-0002-4035-0289"))
 Description: Lossless webp images are 26% smaller in size compared to PNG. Lossy
@@ -17,8 +17,8 @@ Suggests: jpeg, png
 RoxygenNote: 7.1.1
 Language: en-GB
 NeedsCompilation: yes
-Packaged: 2024-10-03 14:13:22 UTC; jeroen
+Packaged: 2024-12-16 14:17:03 UTC; jeroen
 Author: Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>)
 Maintainer: Jeroen Ooms <jeroenooms@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-10-04 09:10:02 UTC
+Date/Publication: 2024-12-16 15:10:02 UTC
